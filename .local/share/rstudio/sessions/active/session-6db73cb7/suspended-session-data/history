@@ -1,0 +1,28 @@
+?rbern
+??rbern
+library(simcausal)
+library("rethinking")
+?rbern
+??rbern
+??rbern
+library(simcausal)
+N <- 1000
+G <- sample(1:2, size = N, replace = TRUE)
+D <- rbern(N, ifelse(G==1, 0.3, 0.8)) + 1
+ifelse(G==1, 0.3, 0.8)
+accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), nrow = 2)
+accept_rate
+accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), ncol = 2)
+accept_rate
+library(simcausal)
+N <- 1000
+G <- sample(1:2, size = N, replace = TRUE)
+D <- rbern(N, ifelse(G==1, 0.3, 0.8)) + 1
+accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), nrow = 2)
+A <- rbern(N, accept_rate[D, G])
+A
+table(G, D)
+table(G, A)
+library(rethinking)
+library(animation)
+getwd()

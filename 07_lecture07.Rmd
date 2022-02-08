@@ -1,0 +1,18 @@
+# Lecture 07
+
+
+
+## Copernican Model
+
+```{r}
+
+library(rethinking)
+library(animation)
+```
+
+
+
+## Reference 
+
+https://www.youtube.com/watch?v=odGAAJDlgp8
+

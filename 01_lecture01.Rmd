@@ -1,0 +1,179 @@
+# Lecture 01: Golems, Owls and DAGs
+
+Golems:
+
+Clay robots
+
+Powerful
+
+No wisdom or foresight
+
+Dangerous
+
+
+## Limitation of Statistical models
+
+* Incredibly limiting
+
+* Focus on rejecting null hypotheses instead of research hypotheses
+
+* Relationship between hypothesis and test not clear 
+
+
+* Industrial framework
+
+
+
+![image](https://user-images.githubusercontent.com/20909751/152689347-71674733-2862-48dc-8237-a7556cafda00.png)
+
+
+##  Null models rarely unique
+
+
+## Hypotheses and Models
+
+
+* Research requires more than than tiny null robots 
+
+* Precise process model(s)
+
+* Statistical model (procedure, golem) justifed by implications of
+process model(s) and question (estimand)
+
+
+## Owls 
+
+"How to draw owls" is a metaphor that this couse will program the models by hands
+
+
+
+### Why drawing the Bayesian Owl
+
+
+* Understand what you are doing
+
+* Document you work, reduce error
+
+
+* Respectable scientific workflow
+
+
+### Five steps of 
+
+
+1. Theoretical estimand
+
+2. Scientific causal models 
+
+
+3. Use 1 & 2 to build statistical models
+
+4. Simulate from 2 to validate 3 yields 1 
+
+5. Analyze real data 
+
+
+
+### Advantages of Bayesian Owl
+
+* Bayesian approach is permissive, flexible
+
+* Expresss uncertanty at all levels
+
+* Director solutions for measurement error, missing data
+
+* Focus on scientific modeling
+
+
+## DAGs (Directed Acylcic Graphs)
+
+
+
+
+
+
+
+Bayes vs Frequentism 
+
+
+### Science before statistics
+
+For statistcal modesl to produce scientic insight, they require additional scoienctific modesl 
+
+
+The reasons for a statistical analuysis are not found in the data themselves, but rather in the causes of the data.
+
+
+The causes of the data cannot be extracted from the data
+alone. No causes in; no causes out.
+
+
+
+### Causal inferences
+
+
+More than association between variables 
+
+* Causal inference is prediction of intervention
+
+Know a cause -> predict the consequences of an intervention
+
+
+Causal inferences is imputation of missing observations
+
+
+Know a cause -> construct unobserved counterfactural outcomes. 
+
+
+
+
+Each letter is a type of measure.
+
+Arrows mean the causes
+
+
+
+
+### Tips
+
+Which control variables
+
+Absolute not safe to add everything
+
+How to test the casual models
+
+
+With more scientic knowlege, can do more
+
+
+
+
+
+* Golems: Brainless, powerful statistical models
+
+* Owls: Documented, objective procedures
+
+* DAGs: Transparent scientifc assumptions to
+ justify scientifc efort
+ expose it to useful critique
+ connect theories to golems
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

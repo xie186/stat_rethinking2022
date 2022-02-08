@@ -1,0 +1,41 @@
+]0;/home/rstudiorstudio@f503e97f85cd:~$ [Krstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ git clone https://github.com/yihui/bookdown-minimal.git
+Cloning into 'bookdown-minimal'...
+remote: Enumerating objects: 14, done.[K
+remote: Total 14 (delta 0), reused 0 (delta 0), pack-reused 14[K
+Unpacking objects:   7% (1/14)Unpacking objects:  14% (2/14)Unpacking objects:  21% (3/14)Unpacking objects:  28% (4/14)Unpacking objects:  35% (5/14)Unpacking objects:  42% (6/14)Unpacking objects:  50% (7/14)Unpacking objects:  57% (8/14)Unpacking objects:  64% (9/14)Unpacking objects:  71% (10/14)Unpacking objects:  78% (11/14)Unpacking objects:  85% (12/14)Unpacking objects:  92% (13/14)Unpacking objects: 100% (14/14)Unpacking objects: 100% (14/14), 2.56 KiB | 1.28 MiB/s, done.
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ mv bookdown-minimal/
+bookdown-minimal.Rproj  .gitignore              LICENSE                 
+.git/                   index.Rmd               README.md               
+rstudio@f503e97f85cd:~$ mv bookdown-minimal/* ./
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ ls
+bookdown-minimal  bookdown-minimal.Rproj  index.Rmd  LICENSE  README.md
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ [Krstudio@f503e97f85cd:~$ [Krstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ mv bookdown-minimal/.go[Kit .[K[Kignore  ./
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ ls
+bookdown-minimal  bookdown-minimal.Rproj  index.Rmd  LICENSE  README.md
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ rm -=r[K[K-rf [K[K[K[K[K[K[K[K^C
+]0;/home/rstudiorstudio@f503e97f85cd:~$ rm -rf https://github.com/yihui/bookdown-minimal.git
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ rm -rf bookdown-minimal/
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ ls
+bookdown-minimal.Rproj	index.Rmd  LICENSE  README.md
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ 
+]0;/home/rstudiorstudio@f503e97f85cd:~$ v[K

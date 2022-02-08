@@ -1,0 +1,69 @@
+# Lecture 09
+
+
+
+
+## Generative model 
+
+
+```{r}
+library(simcausal)
+N <- 1000
+
+G <- sample(1:2, size = N, replace = TRUE)
+
+D <- rbern(N, ifelse(G==1, 0.3, 0.8)) + 1 
+
+accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), nrow = 2)
+
+A <- rbern(N, accept_rate[D, G])
+```
+
+```{r}
+table(G, D)
+```
+
+```{r}
+table(G, A)
+```
+
+
+## 
+
+Is a start, but lots missing
+
+Addmission rate usaully depends upon size of applicant pool, distribution of qualifications
+
+
+In principle, should sample applicant pool and then sort to select admissions
+
+Rates are conditional on structure of applicant pool. 
+
+
+
+## Generalized Linear Models
+
+
+Linear Models
+
+
+
+Generalized linear modesl: 
+
+
+Expoected value is some fuction of an additive combination of parameters
+
+
+
+
+## Links and inverse links
+
+
+
+
+
+
+## Reference
+
+https://www.youtube.com/watch?v=nPi5yGbfxuo
+

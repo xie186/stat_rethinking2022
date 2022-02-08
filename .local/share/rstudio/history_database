@@ -1,0 +1,28 @@
+1644120995568:?rbern
+1644120998257:??rbern
+1644121068185:library(simcausal)
+1644121288711:library("rethinking")
+1644121296251:?rbern
+1644121299243:??rbern
+1644121758640:??rbern
+1644121819049:library(simcausal)
+1644121819812:N <- 1000
+1644121820241:G <- sample(1:2, size = N, replace = TRUE)
+1644121820369:D <- rbern(N, ifelse(G==1, 0.3, 0.8)) + 1
+1644121828054:ifelse(G==1, 0.3, 0.8)
+1644121878625:accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), nrow = 2)
+1644121881353:accept_rate
+1644121889381:accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), ncol = 2)
+1644121891686:accept_rate
+1644121941904:library(simcausal)
+1644121941905:N <- 1000
+1644121941909:G <- sample(1:2, size = N, replace = TRUE)
+1644121941912:D <- rbern(N, ifelse(G==1, 0.3, 0.8)) + 1
+1644121941916:accept_rate <- matrix(c(0.05, 0.2, 0.1, 0.3), nrow = 2)
+1644121941919:A <- rbern(N, accept_rate[D, G])
+1644121948207:A
+1644121967429:table(G, D)
+1644121990327:table(G, A)
+1644162409756:library(rethinking)
+1644162413078:library(animation)
+1644166302247:getwd()
