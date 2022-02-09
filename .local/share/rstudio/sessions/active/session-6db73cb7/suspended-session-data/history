@@ -26,3 +26,18 @@ table(G, A)
 library(rethinking)
 library(animation)
 getwd()
+n <- 1000
+Z <- rbern(n, 0.5)
+?rbern
+library(simcausal)
+(1-Z)*0.1 + Z*0.9
+table((1-Z)*0.1 + Z*0.9)
+table(X, Y)
+n <- 1000
+## confounding variable
+Z <- rbern(n, 0.5)
+X <- rbern(n, (1-Z)*0.1 + Z*0.9)
+Y <- rbern(n, (1-Z)*0.1 + Z*0.9)
+table(X, Y)
+rbern(n, 0.1)
+table(rbern(n, 0.1))

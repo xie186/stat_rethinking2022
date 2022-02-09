@@ -1,0 +1,195 @@
+# Lecture 05
+
+## Elemental confounds
+
+The four elemental confounds
+
+
+## The fork
+
+
+
+$X \leftarrow Z \rightarrow Y$
+
+
+
+
+```{r}
+n <- 1000
+## confounding variable
+## Fair coin flip
+Z <- rbern(n, 0.5)
+X <- rbern(n, (1-Z)*0.1 + Z*0.9)
+Y <- rbern(n, (1-Z)*0.1 + Z*0.9)
+```
+
+When $Z$ equals 0,  $X$ and $Y$ has 0.1 probabilty to be 1; When $Z$ equals 1,  $X$ and $Y$ has 0.9 probabilty to be 1; 
+
+
+```{r}
+table(X, Y)
+```
+
+$$Y \not\!\perp\!\!\!\perp X$$
+Y is not independent on X because there is a common cause. 
+ 
+
+
+```{r}
+cor(X[], Y)
+```
+
+
+When we stratify $Z$, the diagonals  are not bigger as proportion as the off diagonals. 
+
+
+
+$$Y \not\!\perp\!\!\!\perp X \mid Z$$
+
+
+
+```{r}
+cor(X[Z==0], Y[Z==0])
+```
+```{r}
+cor(X[Z==1], Y[Z==1])
+```
+
+
+```{r}
+cols = c(4, 2)
+N = 300
+Z <- rbern(N)
+X <- rnorm(N, 2*Z-1)
+Y <- rnorm(N, 2*Z-1)
+
+plot(X, Y, col= cols[Z+1], lwd = 3)
+abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+abline(lm(Y~X), lwd=3)
+text(x = -2, y=2, labels = "Z = 0", col = 4)
+```
+
+We have a continouse variable $X$ and $Y$. For all $X$ and $Y$, there is a positive correlation. 
+
+X and Y are not independent on one another. 
+
+
+
+
+
+### Fork example
+
+
+Why do regions of the US with higher rates of marriage also have higher rates of 
+divorce? 
+
+
+```{r}
+library(rethinking)
+data("WaffleDivorce")
+WaffleDivorce
+```
+
+
+
+$M \leftarrow A \rightarrow D$
+
+
+### What does it mean to stratify by a continouse variable 
+
+How does $A$ influence $D ?$
+
+What is $D=f(A, M) ?$
+
+In a linear regression:
+
+$$
+\begin{aligned}
+D_{i} & \sim \operatorname{Normal}\left(\mu_{i}, \sigma\right) \\
+\mu_{i} &=\alpha+\beta_{M} M_{i}+\beta_{A} A_{i}
+\end{aligned}
+$$
+
+
+Every value of $A$ produces of different relationship between $D$ and $M$. 
+
+
+From the perspective of marriage rate, marriage is just something that makes the intercept conditional on age. 
+
+
+
+OFten convenient to standardize variales in linear regression.
+
+Standardize (Z-score): substract mean and divide by standard deviation. 
+
+
+Computation works better.
+
+Easy to choose sensible priors. 
+
+
+
+
+### 
+
+$$
+\begin{aligned}
+D_{i} & \sim \operatorname{Normal}\left(\mu_{i}, \sigma\right) \\
+\mu_{i} &=\alpha+\beta_{M} M_{i}+\beta_{A} A \\
+\alpha & \sim \operatorname{Normal}(0,10) \\
+\beta_{M} & \sim \operatorname{Normal}(0,10) \\
+\beta_{A} & \sim \operatorname{Normal}(0,10) \\
+\sigma & \sim \operatorname{Exponential}(1)
+\end{aligned}
+$$
+
+
+```{r}
+n <- 20
+a <- rnorm(n, 0, 10)
+bM <- rnorm(n, 0, 10)
+bA <- rnorm(n, 0, 10)
+plot(NULL, xlim=c(-2, 2), ylim=c(-2, 2), 
+    xlab="Meian age of marriage (standardized)",
+    ylab="Divoce rate (stardardized)")
+Aseq <- seq(from=-3, to=3, len=30)
+for(i in 1:n){
+  mu <- a[i] + bA[i]*Aseq
+  lines(Aseq, mu, lwd=2, col=2)
+}
+```
+
+
+```{r}
+n <- 20
+a <- rnorm(n, 0, 0.02)
+bM <- rnorm(n, 0,0.5)
+bA <- rnorm(n, 0, 0.5)
+plot(NULL, xlim=c(-2, 2), ylim=c(-2, 2), 
+    xlab="Meian age of marriage (standardized)",
+    ylab="Divoce rate (stardardized)")
+Aseq <- seq(from=-3, to=3, len=30)
+for(i in 1:n){
+  mu <- a[i] + bA[i]*Aseq
+  lines(Aseq, mu, lwd=2, col=2)
+}
+```
+
+
+
+#### Analyze the data
+
+
+```{r}
+library(robustHD)
+dat <- list(
+   D = stardardize()
+  
+)
+```
+
+
+
+
+

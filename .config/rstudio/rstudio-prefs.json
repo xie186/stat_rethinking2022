@@ -1,3 +1,6 @@
 {
-    "jobs_tab_visibility": "shown"
+    "jobs_tab_visibility": "shown",
+    "initial_working_directory": "~",
+    "font_size_points": 14,
+    "posix_terminal_shell": "bash"
 }

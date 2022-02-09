@@ -26,3 +26,130 @@
 1644162409756:library(rethinking)
 1644162413078:library(animation)
 1644166302247:getwd()
+1644284991770:n <- 1000
+1644284991793:Z <- rbern(n, 0.5)
+1644284997908:?rbern
+1644285042333:library(simcausal)
+1644285117641:(1-Z)*0.1 + Z*0.9
+1644285125778:table((1-Z)*0.1 + Z*0.9)
+1644285247182:table(X, Y)
+1644285251448:n <- 1000
+1644285251452:## confounding variable
+1644285251453:Z <- rbern(n, 0.5)
+1644285251456:X <- rbern(n, (1-Z)*0.1 + Z*0.9)
+1644285251459:Y <- rbern(n, (1-Z)*0.1 + Z*0.9)
+1644285253118:table(X, Y)
+1644285445177:rbern(n, 0.1)
+1644285451416:table(rbern(n, 0.1))
+1644370739319:table(X, Y)
+1644370803027:cor(X, Y)
+1644371431136:cor(X[Z==0], Y[Z==0])
+1644371443033:cor(X[Z==1], Y[Z==1])
+1644371626449:cols = c(4, 2)
+1644371626457:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644371627060:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644371627080:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644371627083:abline(lm(Y~X), lwd=3)
+1644371649263:X
+1644371651369:Y
+1644372312790:Z <- rbern(N)
+1644372316329:Z
+1644372359440:cols = c(4, 2)
+1644372359443:N = 300
+1644372359446:Z <- rbern(N)
+1644372359449:X <- rbern(N, 2*Z-1)
+1644372359452:Y <- rbern(N, 2*Z-1)
+1644372359456:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644372359483:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644372386199:cols = c(4, 2)
+1644372386204:N = 300
+1644372386206:Z <- rbern(N)
+1644372386209:X <- rbern(N, 2*Z-1)
+1644372386212:Y <- rbern(N, 2*Z-1)
+1644372386216:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644372386223:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644372406622:abline(lm(Y~X), lwd=3)
+1644372406628:X
+1644372408436:X
+1644372422535:cols = c(4, 2)
+1644372422540:N = 300
+1644372422542:Z <- rbern(N)
+1644372422545:X <- rnorm(N, 2*Z-1)
+1644372422548:Y <- rnorm(N, 2*Z-1)
+1644372422551:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644372422625:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644372422691:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644372422760:abline(lm(Y~X), lwd=3)
+1644372433480:dev.off()
+1644372439197:cols = c(4, 2)
+1644372439202:N = 300
+1644372439204:Z <- rbern(N)
+1644372439207:X <- rnorm(N, 2*Z-1)
+1644372439228:Y <- rnorm(N, 2*Z-1)
+1644372439231:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644372439241:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644372439244:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644372439247:abline(lm(Y~X), lwd=3)
+1644372452256:2*Z-1
+1644372549208:cols = c(4, 2)
+1644372549211:N = 300
+1644372549213:Z <- rbern(N)
+1644372549216:X <- rnorm(N, 2*Z-1)
+1644372549219:Y <- rnorm(N, 2*Z-1)
+1644372549223:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644372549233:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644372549236:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644372549239:abline(lm(Y~X), lwd=3)
+1644372549242:text(x = -2, y=2, labels = "Z = 0")
+1644372570127:cols = c(4, 2)
+1644372570131:N = 300
+1644372570133:Z <- rbern(N)
+1644372570136:X <- rnorm(N, 2*Z-1)
+1644372570139:Y <- rnorm(N, 2*Z-1)
+1644372570143:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644372570152:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644372570156:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644372570158:abline(lm(Y~X), lwd=3)
+1644372570161:text(x = -2, y=2, labels = "Z = 0", col = 4)
+1644373875707:library(rethinking)
+1644373875709:data("WaffleDivorce")
+1644373883900:library(rethinking)
+1644373883902:data("WaffleDivorce")
+1644373883917:WaffleDivorce
+1644373998223:View(WaffleDivorce)
+1644375114796:n <- 20
+1644375114800:a <- rnorm(n, 0, 10)
+1644375116691:a
+1644375255482:n <- 20
+1644375255485:a <- rnorm(n, 0, 10)
+1644375255488:bM <- rnorm(n, 0, 10)
+1644375255491:bA <- rnorm(n, 0, 10)
+1644375255494:plot(NULL, xlim=c(-2, 2), ylim=c(-2, 2),
+1644375255495:xlab="Meian age of marriage (standardized)",
+1644375255497:ylab="Divoce rate (stardardized)")
+1644375332063:n <- 20
+1644375332066:a <- rnorm(n, 0, 10)
+1644375332069:bM <- rnorm(n, 0, 10)
+1644375332072:bA <- rnorm(n, 0, 10)
+1644375332075:plot(NULL, xlim=c(-2, 2), ylim=c(-2, 2),
+1644375332076:xlab="Meian age of marriage (standardized)",
+1644375332078:ylab="Divoce rate (stardardized)")
+1644375332082:Aseq <- seq(from=-3, to=3, len=30)
+1644375332086:for(i in 1:n){
+1644375332087:mu <- a[i] + bA[i]*Aseq
+1644375332088:lines(Aseq, mu, lwd=2, col=2)
+1644375332089:}
+1644375532922:n <- 20
+1644375532926:a <- rnorm(n, 0, 0.02)
+1644375532929:bM <- rnorm(n, 0,0.5)
+1644375532932:bA <- rnorm(n, 0, 0.5)
+1644375532935:plot(NULL, xlim=c(-2, 2), ylim=c(-2, 2),
+1644375532937:xlab="Meian age of marriage (standardized)",
+1644375532938:ylab="Divoce rate (stardardized)")
+1644375532943:Aseq <- seq(from=-3, to=3, len=30)
+1644375532946:for(i in 1:n){
+1644375532947:mu <- a[i] + bA[i]*Aseq
+1644375532948:lines(Aseq, mu, lwd=2, col=2)
+1644375532949:}
+1644377213780:??stardardize
+1644377278769:library(robustHD)
