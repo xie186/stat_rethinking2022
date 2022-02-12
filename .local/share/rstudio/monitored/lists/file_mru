@@ -1,6 +1,11 @@
+~/index.Rmd
+~/_bookdown.yml
+~/02_lecture02.Rmd
+~/_main.Rmd
+~/11_Lecture11.Rmd
+~/12_Lecture12.Rmd
 ~/05_lecture05.Rmd
 ~/01_lecture01.Rmd
 ~/07_lecture07.Rmd
 ~/09_lecture9.Rmd
-~/index.Rmd
 ~/bookdown-minimal/.gitignore

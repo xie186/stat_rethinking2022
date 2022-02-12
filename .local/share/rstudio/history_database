@@ -153,3 +153,138 @@
 1644375532949:}
 1644377213780:??stardardize
 1644377278769:library(robustHD)
+1644462625662:library(robustHD)
+1644630907106:cols = c(4, 2)
+1644630907147:N = 300
+1644630907149:Z <- rbern(N)
+1644630907152:X <- rnorm(N, 2*Z-1)
+1644630907155:Y <- rnorm(N, 2*Z-1)
+1644630907159:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644630907188:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644630907193:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644630907196:abline(lm(Y~X), lwd=3)
+1644630907199:text(x = -2, y=2, labels = "Z = 0", col = 4)
+1644630960607:cols = c(4, 2)
+1644630960612:N = 300
+1644630960614:Z <- rbern(N)
+1644630960617:X <- rnorm(N, 2*Z-1)
+1644630960620:Y <- rnorm(N, 2*Z-1)
+1644630960623:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644630960656:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644630960659:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644630960662:abline(lm(Y~X), lwd=3)
+1644630960665:text(x = -2, y=2, labels = "Z = 0", col = 4)
+1644630974133:?rnorm
+1644631090639:library(simcausal)
+1644631090671:n <- 1000
+1644631090674:## confounding variable
+1644631090676:## Fair coin flip
+1644631090678:Z <- rbern(n, 0.5)
+1644631090683:X <- rbern(n, (1-Z)*0.1 + Z*0.9)
+1644631090689:Y <- rbern(n, (1-Z)*0.1 + Z*0.9)
+1644631095844:cols = c(4, 2)
+1644631095893:N = 300
+1644631095896:Z <- rbern(N)
+1644631095899:X <- rnorm(N, 2*Z-1)
+1644631095902:Y <- rnorm(N, 2*Z-1)
+1644631095905:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644631095916:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644631095921:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644631095926:abline(lm(Y~X), lwd=3)
+1644631095931:text(x = -2, y=2, labels = "Z = 0", col = 4)
+1644631341756:cols = c(4, 2)
+1644631341761:N = 300
+1644631341763:Z <- rbern(N)
+1644631341766:X <- rnorm(N, 2*Z-1)
+1644631341769:Y <- rnorm(N, 2*Z-1)
+1644631341773:plot(X, Y, col= cols[Z+1], lwd = 3)
+1644631341783:abline(lm(Y[Z==1]~X[Z==1]), col=2, lwd=3)
+1644631341788:abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
+1644631341792:abline(lm(Y~X), lwd=3)
+1644631341795:text(x = -2, y=2, labels = "Z = 0", col = 4)
+1644631491064:library(simcausal)
+1644631491066:cols = c(4, 2)
+1644631491069:N = 300
+1644631491072:Z <- rbern(N)
+1644631505461:?rbern
+1644631516856:Z
+1644632512035:dbinom(6, 9, 0.7)
+1644632514918:dbinom
+1644632516498:?dbinom
+1644632578766:# x: vectior of quarantines
+1644632578768:# size: number of observations
+1644632578769:# p vector of probabilities
+1644632578770:dbinom(6, 9, 0.7)
+1644632729945:?dbinom
+1644634811773:p_grid <- seq(from = 0, to = 1, length.out = 1000)
+1644634811777:prob_p <- rep(1, 1000)
+1644634811780:prob_data <- dbinom(6, 9, prob = p_grid)
+1644634811798:posterior <- prob_data * prob_p
+1644634811801:posterior <- posterior / sum(posterior)
+1644634815843:posterior
+1644634872066:plot(p_grid)
+1644634947871:par(mfrow=c(2,2))
+1644634947873:plot(p_grid)
+1644634947962:plot(prob_p)
+1644634948057:plot(prob_data)
+1644634963757:par(mfrow=c(2,2))
+1644634963759:plot(p_grid)
+1644634963777:plot(prob_p)
+1644634963792:plot(prob_data)
+1644635020623:p_grid <- seq(from = 0, to = 1, length.out = 1000)
+1644635020628:prob_p <- rep(1, 1000)
+1644635020631:prob_data <- dbinom(6, 9, prob = p_grid)
+1644635020634:posterior <- prob_data * prob_p
+1644635020637:posterior_normalized <- posterior / sum(posterior)
+1644635033716:par(mfrow=c(2,2))
+1644635033719:plot(p_grid)
+1644635033736:plot(prob_p)
+1644635033751:plot(prob_data)
+1644635033768:plot(posterior_normalized)
+1644635053904:p_grid <- seq(from = 0, to = 1, length.out = 1000)
+1644635053918:prob_p <- rep(1, 1000)
+1644635053921:prob_data <- dbinom(6, 9, prob = p_grid)
+1644635053924:posterior <- prob_data * prob_p
+1644635053927:posterior_normalized <- posterior / sum(posterior)
+1644635054836:par(mfrow=c(2,2))
+1644635054839:plot(p_grid)
+1644635054856:plot(prob_p)
+1644635054871:plot(prob_data)
+1644635054887:plot(posterior_normalized)
+1644635287144:p_grid <- seq(from = 0, to = 1, length.out = 1000)
+1644635287147:prob_p <- dbeta(p_grid, 3, 1)
+1644635287151:prob_data <- dbinom(6, 9, prob = p_grid)
+1644635287154:posterior <- prob_data * prob_p
+1644635287157:posterior_normalized_beta <- posterior / sum(posterior)
+1644635287160:par(mfrow=c(2,2))
+1644635287162:plot(p_grid)
+1644635287178:plot(prob_p)
+1644635287195:plot(prob_data)
+1644635287211:## Probability distribution
+1644635287213:plot(posterior_normalized, col="gray")
+1644635287230:line(posterior_normalized_beta)
+1644635299291:p_grid <- seq(from = 0, to = 1, length.out = 1000)
+1644635299294:prob_p <- dbeta(p_grid, 3, 1)
+1644635299298:prob_data <- dbinom(6, 9, prob = p_grid)
+1644635299301:posterior <- prob_data * prob_p
+1644635299304:posterior_normalized_beta <- posterior / sum(posterior)
+1644635299307:par(mfrow=c(2,2))
+1644635299309:plot(p_grid)
+1644635299326:plot(prob_p)
+1644635299343:plot(prob_data)
+1644635299359:## Probability distribution
+1644635299361:plot(posterior_normalized, col="gray")
+1644635299378:lines(posterior_normalized_beta)
+1644635338324:p_grid <- seq(from = 0, to = 1, length.out = 1000)
+1644635338330:prob_p <- dbeta(p_grid, 3, 1)
+1644635338336:prob_data <- dbinom(6, 9, prob = p_grid)
+1644635338340:posterior <- prob_data * prob_p
+1644635338343:posterior_normalized_beta <- posterior / sum(posterior)
+1644635338346:par(mfrow=c(2,2))
+1644635338348:plot(p_grid)
+1644635338365:plot(prob_p)
+1644635338382:plot(prob_data)
+1644635338398:## Probability distribution
+1644635338400:plot(posterior_normalized, col="gray",
+1644635338401:ylim=c(0,max(posterior_normalized, posterior_normalized_beta)))
+1644635338419:lines(posterior_normalized_beta)

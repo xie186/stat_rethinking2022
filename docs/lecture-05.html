@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Lecture 05 | Notes and assignments on Statistical Rethinking 2022</title>
+  <meta name="description" content="Chapter 3 Lecture 05 | Notes and assignments on Statistical Rethinking 2022" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Lecture 05 | Notes and assignments on Statistical Rethinking 2022" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Lecture 05 | Notes and assignments on Statistical Rethinking 2022" />
+  
+  
+  
+
+<meta name="author" content="Shaojun Xie" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lecture-02.html"/>
+<link rel="next" href="lecture-07.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Libraries</a></li>
+<li class="chapter" data-level="1" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html"><i class="fa fa-check"></i><b>1</b> Lecture 01: Golems, Owls and DAGs</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#limitation-of-statistical-models"><i class="fa fa-check"></i><b>1.1</b> Limitation of Statistical models</a></li>
+<li class="chapter" data-level="1.2" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#null-models-rarely-unique"><i class="fa fa-check"></i><b>1.2</b> Null models rarely unique</a></li>
+<li class="chapter" data-level="1.3" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#hypotheses-and-models"><i class="fa fa-check"></i><b>1.3</b> Hypotheses and Models</a></li>
+<li class="chapter" data-level="1.4" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#owls"><i class="fa fa-check"></i><b>1.4</b> Owls</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#why-drawing-the-bayesian-owl"><i class="fa fa-check"></i><b>1.4.1</b> Why drawing the Bayesian Owl</a></li>
+<li class="chapter" data-level="1.4.2" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#five-steps-of"><i class="fa fa-check"></i><b>1.4.2</b> Five steps of</a></li>
+<li class="chapter" data-level="1.4.3" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#advantages-of-bayesian-owl"><i class="fa fa-check"></i><b>1.4.3</b> Advantages of Bayesian Owl</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#dags-directed-acylcic-graphs"><i class="fa fa-check"></i><b>1.5</b> DAGs (Directed Acylcic Graphs)</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#science-before-statistics"><i class="fa fa-check"></i><b>1.5.1</b> Science before statistics</a></li>
+<li class="chapter" data-level="1.5.2" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#causal-inferences"><i class="fa fa-check"></i><b>1.5.2</b> Causal inferences</a></li>
+<li class="chapter" data-level="1.5.3" data-path="lecture-01-golems-owls-and-dags.html"><a href="lecture-01-golems-owls-and-dags.html#tips"><i class="fa fa-check"></i><b>1.5.3</b> Tips</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lecture-02.html"><a href="lecture-02.html"><i class="fa fa-check"></i><b>2</b> Lecture 02</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lecture-02.html"><a href="lecture-02.html#what-proportion-of-the-surface-is-covered-with-water"><i class="fa fa-check"></i><b>2.1</b> What proportion of the surface is covered with water?</a></li>
+<li class="chapter" data-level="2.2" data-path="lecture-02.html"><a href="lecture-02.html#bayesian-data-analysis"><i class="fa fa-check"></i><b>2.2</b> Bayesian data analysis</a></li>
+<li class="chapter" data-level="2.3" data-path="lecture-02.html"><a href="lecture-02.html#globe-tossing"><i class="fa fa-check"></i><b>2.3</b> Globe tossing</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="lecture-02.html"><a href="lecture-02.html#section"><i class="fa fa-check"></i><b>2.3.1</b> </a></li>
+<li class="chapter" data-level="2.3.2" data-path="lecture-02.html"><a href="lecture-02.html#letters-from-my-reviewers"><i class="fa fa-check"></i><b>2.3.2</b> Letters from my reviewers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="lecture-02.html"><a href="lecture-02.html#formalities"><i class="fa fa-check"></i><b>2.4</b> Formalities</a></li>
+<li class="chapter" data-level="2.5" data-path="lecture-02.html"><a href="lecture-02.html#grid-approximation"><i class="fa fa-check"></i><b>2.5</b> Grid approximation</a></li>
+<li class="chapter" data-level="2.6" data-path="lecture-02.html"><a href="lecture-02.html#reference"><i class="fa fa-check"></i><b>2.6</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lecture-05.html"><a href="lecture-05.html"><i class="fa fa-check"></i><b>3</b> Lecture 05</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lecture-05.html"><a href="lecture-05.html#elemental-confounds"><i class="fa fa-check"></i><b>3.1</b> Elemental confounds</a></li>
+<li class="chapter" data-level="3.2" data-path="lecture-05.html"><a href="lecture-05.html#the-fork"><i class="fa fa-check"></i><b>3.2</b> The fork</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="lecture-05.html"><a href="lecture-05.html#fork-example"><i class="fa fa-check"></i><b>3.2.1</b> Fork example</a></li>
+<li class="chapter" data-level="3.2.2" data-path="lecture-05.html"><a href="lecture-05.html#what-does-it-mean-to-stratify-by-a-continouse-variable"><i class="fa fa-check"></i><b>3.2.2</b> What does it mean to stratify by a continouse variable</a></li>
+<li class="chapter" data-level="3.2.3" data-path="lecture-05.html"><a href="lecture-05.html#section-1"><i class="fa fa-check"></i><b>3.2.3</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="lecture-05.html"><a href="lecture-05.html#reference-1"><i class="fa fa-check"></i><b>3.3</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lecture-07.html"><a href="lecture-07.html"><i class="fa fa-check"></i><b>4</b> Lecture 07</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lecture-07.html"><a href="lecture-07.html#copernican-model"><i class="fa fa-check"></i><b>4.1</b> Copernican Model</a></li>
+<li class="chapter" data-level="4.2" data-path="lecture-07.html"><a href="lecture-07.html#reference-2"><i class="fa fa-check"></i><b>4.2</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lecture-09.html"><a href="lecture-09.html"><i class="fa fa-check"></i><b>5</b> Lecture 09</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lecture-09.html"><a href="lecture-09.html#generative-model"><i class="fa fa-check"></i><b>5.1</b> Generative model</a></li>
+<li class="chapter" data-level="5.2" data-path="lecture-09.html"><a href="lecture-09.html#section-2"><i class="fa fa-check"></i><b>5.2</b> </a></li>
+<li class="chapter" data-level="5.3" data-path="lecture-09.html"><a href="lecture-09.html#generalized-linear-models"><i class="fa fa-check"></i><b>5.3</b> Generalized Linear Models</a></li>
+<li class="chapter" data-level="5.4" data-path="lecture-09.html"><a href="lecture-09.html#links-and-inverse-links"><i class="fa fa-check"></i><b>5.4</b> Links and inverse links</a></li>
+<li class="chapter" data-level="5.5" data-path="lecture-09.html"><a href="lecture-09.html#reference-3"><i class="fa fa-check"></i><b>5.5</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lecture-11.html"><a href="lecture-11.html"><i class="fa fa-check"></i><b>6</b> Lecture 11</a></li>
+<li class="chapter" data-level="7" data-path="lecture-12.html"><a href="lecture-12.html"><i class="fa fa-check"></i><b>7</b> Lecture 12</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes and assignments on Statistical Rethinking 2022</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lecture-05" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Lecture 05</h1>
+<div id="elemental-confounds" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Elemental confounds</h2>
+<p>The four elemental confounds</p>
+</div>
+<div id="the-fork" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> The fork</h2>
+<p><span class="math inline">\(X \leftarrow Z \rightarrow Y\)</span></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="lecture-05.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simcausal)</span>
+<span id="cb7-2"><a href="lecture-05.html#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb7-3"><a href="lecture-05.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## confounding variable</span></span>
+<span id="cb7-4"><a href="lecture-05.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Fair coin flip</span></span>
+<span id="cb7-5"><a href="lecture-05.html#cb7-5" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">rbern</span>(n, <span class="fl">0.5</span>)</span>
+<span id="cb7-6"><a href="lecture-05.html#cb7-6" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rbern</span>(n, (<span class="dv">1</span><span class="sc">-</span>Z)<span class="sc">*</span><span class="fl">0.1</span> <span class="sc">+</span> Z<span class="sc">*</span><span class="fl">0.9</span>)</span>
+<span id="cb7-7"><a href="lecture-05.html#cb7-7" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rbern</span>(n, (<span class="dv">1</span><span class="sc">-</span>Z)<span class="sc">*</span><span class="fl">0.1</span> <span class="sc">+</span> Z<span class="sc">*</span><span class="fl">0.9</span>)</span></code></pre></div>
+<p>When <span class="math inline">\(Z\)</span> equals 0, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> has 0.1 probabilty to be 1; When <span class="math inline">\(Z\)</span> equals 1, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> has 0.9 probabilty to be 1;</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lecture-05.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(X, Y)</span></code></pre></div>
+<pre><code>##    Y
+## X     0   1
+##   0 414  95
+##   1  89 402</code></pre>
+<p><span class="math display">\[Y \not\!\perp\!\!\!\perp X\]</span>
+Y is not independent on X because there is a common cause.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="lecture-05.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X[], Y)</span></code></pre></div>
+<pre><code>## [1] 0.6320058</code></pre>
+<p>When we stratify <span class="math inline">\(Z\)</span>, the diagonals are not bigger as proportion as the off diagonals.</p>
+<p><span class="math display">\[Y \not\!\perp\!\!\!\perp X \mid Z\]</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="lecture-05.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X[Z<span class="sc">==</span><span class="dv">0</span>], Y[Z<span class="sc">==</span><span class="dv">0</span>])</span></code></pre></div>
+<pre><code>## [1] 0.01552259</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="lecture-05.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X[Z<span class="sc">==</span><span class="dv">1</span>], Y[Z<span class="sc">==</span><span class="dv">1</span>])</span></code></pre></div>
+<pre><code>## [1] -0.02201733</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="lecture-05.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simcausal)</span>
+<span id="cb16-2"><a href="lecture-05.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="lecture-05.html#cb16-3" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="cb16-4"><a href="lecture-05.html#cb16-4" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">300</span></span>
+<span id="cb16-5"><a href="lecture-05.html#cb16-5" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">rbern</span>(N, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
+<span id="cb16-6"><a href="lecture-05.html#cb16-6" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N, <span class="dv">2</span><span class="sc">*</span>Z<span class="dv">-1</span>)</span>
+<span id="cb16-7"><a href="lecture-05.html#cb16-7" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N, <span class="dv">2</span><span class="sc">*</span>Z<span class="dv">-1</span>)</span>
+<span id="cb16-8"><a href="lecture-05.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="lecture-05.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X, Y, <span class="at">col=</span> cols[Z<span class="sc">+</span><span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb16-10"><a href="lecture-05.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(Y[Z<span class="sc">==</span><span class="dv">1</span>]<span class="sc">~</span>X[Z<span class="sc">==</span><span class="dv">1</span>]), <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span>
+<span id="cb16-11"><a href="lecture-05.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(Y[Z<span class="sc">==</span><span class="dv">0</span>]<span class="sc">~</span>X[Z<span class="sc">==</span><span class="dv">0</span>]), <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span>
+<span id="cb16-12"><a href="lecture-05.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(Y<span class="sc">~</span>X), <span class="at">lwd=</span><span class="dv">3</span>)</span>
+<span id="cb16-13"><a href="lecture-05.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;Z = 0&quot;</span>, <span class="at">col =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="stat_rethinking_2022_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+We have a continouse variable <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. For all <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, there is a positive correlation.</p>
+<p>X and Y are not independent on one another.</p>
+<div id="fork-example" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Fork example</h3>
+<p>Why do regions of the US with higher rates of marriage also have higher rates of
+divorce?</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="lecture-05.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rethinking)</span></code></pre></div>
+<pre><code>## Loading required package: rstan</code></pre>
+<pre><code>## Loading required package: StanHeaders</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## rstan (Version 2.21.3, GitRev: 2e1f913d3ca3)</code></pre>
+<pre><code>## For execution on a local, multicore CPU with excess RAM we recommend calling
+## options(mc.cores = parallel::detectCores()).
+## To avoid recompilation of unchanged Stan programs, we recommend calling
+## rstan_options(auto_write = TRUE)</code></pre>
+<pre><code>## Loading required package: cmdstanr</code></pre>
+<pre><code>## This is cmdstanr version 0.4.0</code></pre>
+<pre><code>## - Online documentation and vignettes at mc-stan.org/cmdstanr</code></pre>
+<pre><code>## - Use set_cmdstan_path() to set the path to CmdStan</code></pre>
+<pre><code>## - Use install_cmdstan() to install CmdStan</code></pre>
+<pre><code>## Loading required package: parallel</code></pre>
+<pre><code>## rethinking (Version 2.21)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rethinking&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:rstan&#39;:
+## 
+##     stan</code></pre>
+<pre><code>## The following objects are masked from &#39;package:simcausal&#39;:
+## 
+##     rbern, sim</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     rstudent</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="lecture-05.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;WaffleDivorce&quot;</span>)</span>
+<span id="cb34-2"><a href="lecture-05.html#cb34-2" aria-hidden="true" tabindex="-1"></a>WaffleDivorce</span></code></pre></div>
+<pre><code>##                Location Loc Population MedianAgeMarriage Marriage Marriage.SE
+## 1               Alabama  AL       4.78              25.3     20.2        1.27
+## 2                Alaska  AK       0.71              25.2     26.0        2.93
+## 3               Arizona  AZ       6.33              25.8     20.3        0.98
+## 4              Arkansas  AR       2.92              24.3     26.4        1.70
+## 5            California  CA      37.25              26.8     19.1        0.39
+## 6              Colorado  CO       5.03              25.7     23.5        1.24
+## 7           Connecticut  CT       3.57              27.6     17.1        1.06
+## 8              Delaware  DE       0.90              26.6     23.1        2.89
+## 9  District of Columbia  DC       0.60              29.7     17.7        2.53
+## 10              Florida  FL      18.80              26.4     17.0        0.58
+## 11              Georgia  GA       9.69              25.9     22.1        0.81
+## 12               Hawaii  HI       1.36              26.9     24.9        2.54
+## 13                Idaho  ID       1.57              23.2     25.8        1.84
+## 14             Illinois  IL      12.83              27.0     17.9        0.58
+## 15              Indiana  IN       6.48              25.7     19.8        0.81
+## 16                 Iowa  IA       3.05              25.4     21.5        1.46
+## 17               Kansas  KS       2.85              25.0     22.1        1.48
+## 18             Kentucky  KY       4.34              24.8     22.2        1.11
+## 19            Louisiana  LA       4.53              25.9     20.6        1.19
+## 20                Maine  ME       1.33              26.4     13.5        1.40
+## 21             Maryland  MD       5.77              27.3     18.3        1.02
+## 22        Massachusetts  MA       6.55              28.5     15.8        0.70
+## 23             Michigan  MI       9.88              26.4     16.5        0.69
+## 24            Minnesota  MN       5.30              26.3     15.3        0.77
+## 25          Mississippi  MS       2.97              25.8     19.3        1.54
+## 26             Missouri  MO       5.99              25.6     18.6        0.81
+## 27              Montana  MT       0.99              25.7     18.5        2.31
+## 28             Nebraska  NE       1.83              25.4     19.6        1.44
+## 29        New Hampshire  NH       1.32              26.8     16.7        1.76
+## 30           New Jersey  NJ       8.79              27.7     14.8        0.59
+## 31           New Mexico  NM       2.06              25.8     20.4        1.90
+## 32             New York  NY      19.38              28.4     16.8        0.47
+## 33       North Carolina  NC       9.54              25.7     20.4        0.98
+## 34         North Dakota  ND       0.67              25.3     26.7        2.93
+## 35                 Ohio  OH      11.54              26.3     16.9        0.61
+## 36             Oklahoma  OK       3.75              24.4     23.8        1.29
+## 37               Oregon  OR       3.83              26.0     18.9        1.10
+## 38         Pennsylvania  PA      12.70              27.1     15.5        0.48
+## 39         Rhode Island  RI       1.05              28.2     15.0        2.11
+## 40       South Carolina  SC       4.63              26.4     18.1        1.18
+## 41         South Dakota  SD       0.81              25.6     20.1        2.64
+## 42            Tennessee  TN       6.35              25.2     19.4        0.85
+## 43                Texas  TX      25.15              25.2     21.5        0.61
+## 44                 Utah  UT       2.76              23.3     29.6        1.77
+## 45              Vermont  VT       0.63              26.9     16.4        2.40
+## 46             Virginia  VA       8.00              26.4     20.5        0.83
+## 47           Washington  WA       6.72              25.9     21.4        1.00
+## 48        West Virginia  WV       1.85              25.0     22.2        1.69
+## 49            Wisconsin  WI       5.69              26.3     17.2        0.79
+## 50              Wyoming  WY       0.56              24.2     30.7        3.92
+##    Divorce Divorce.SE WaffleHouses South Slaves1860 Population1860
+## 1     12.7       0.79          128     1     435080         964201
+## 2     12.5       2.05            0     0          0              0
+## 3     10.8       0.74           18     0          0              0
+## 4     13.5       1.22           41     1     111115         435450
+## 5      8.0       0.24            0     0          0         379994
+## 6     11.6       0.94           11     0          0          34277
+## 7      6.7       0.77            0     0          0         460147
+## 8      8.9       1.39            3     0       1798         112216
+## 9      6.3       1.89            0     0          0          75080
+## 10     8.5       0.32          133     1      61745         140424
+## 11    11.5       0.58          381     1     462198        1057286
+## 12     8.3       1.27            0     0          0              0
+## 13     7.7       1.05            0     0          0              0
+## 14     8.0       0.45            2     0          0        1711951
+## 15    11.0       0.63           17     0          0        1350428
+## 16    10.2       0.91            0     0          0         674913
+## 17    10.6       1.09            6     0          2         107206
+## 18    12.6       0.75           64     1     225483        1155684
+## 19    11.0       0.89           66     1     331726         708002
+## 20    13.0       1.48            0     0          0         628279
+## 21     8.8       0.69           11     0      87189         687049
+## 22     7.8       0.52            0     0          0        1231066
+## 23     9.2       0.53            0     0          0         749113
+## 24     7.4       0.60            0     0          0         172023
+## 25    11.1       1.01           72     1     436631         791305
+## 26     9.5       0.67           39     1     114931        1182012
+## 27     9.1       1.71            0     0          0              0
+## 28     8.8       0.94            0     0         15          28841
+## 29    10.1       1.61            0     0          0         326073
+## 30     6.1       0.46            0     0         18         672035
+## 31    10.2       1.11            2     0          0          93516
+## 32     6.6       0.31            0     0          0        3880735
+## 33     9.9       0.48          142     1     331059         992622
+## 34     8.0       1.44            0     0          0              0
+## 35     9.5       0.45           64     0          0        2339511
+## 36    12.8       1.01           16     0          0              0
+## 37    10.4       0.80            0     0          0          52465
+## 38     7.7       0.43           11     0          0        2906215
+## 39     9.4       1.79            0     0          0         174620
+## 40     8.1       0.70          144     1     402406         703708
+## 41    10.9       2.50            0     0          0           4837
+## 42    11.4       0.75          103     1     275719        1109801
+## 43    10.0       0.35           99     1     182566         604215
+## 44    10.2       0.93            0     0          0          40273
+## 45     9.6       1.87            0     0          0         315098
+## 46     8.9       0.52           40     1     490865        1219630
+## 47    10.0       0.65            0     0          0          11594
+## 48    10.9       1.34            4     1      18371         376688
+## 49     8.3       0.57            0     0          0         775881
+## 50    10.3       1.90            0     0          0              0
+##    PropSlaves1860
+## 1         4.5e-01
+## 2         0.0e+00
+## 3         0.0e+00
+## 4         2.6e-01
+## 5         0.0e+00
+## 6         0.0e+00
+## 7         0.0e+00
+## 8         1.6e-02
+## 9         0.0e+00
+## 10        4.4e-01
+## 11        4.4e-01
+## 12        0.0e+00
+## 13        0.0e+00
+## 14        0.0e+00
+## 15        0.0e+00
+## 16        0.0e+00
+## 17        1.9e-05
+## 18        0.0e+00
+## 19        4.7e-01
+## 20        0.0e+00
+## 21        1.3e-01
+## 22        0.0e+00
+## 23        0.0e+00
+## 24        0.0e+00
+## 25        5.5e-01
+## 26        9.7e-02
+## 27        0.0e+00
+## 28        5.2e-04
+## 29        0.0e+00
+## 30        2.7e-05
+## 31        0.0e+00
+## 32        0.0e+00
+## 33        3.3e-01
+## 34        0.0e+00
+## 35        0.0e+00
+## 36        0.0e+00
+## 37        0.0e+00
+## 38        0.0e+00
+## 39        0.0e+00
+## 40        5.7e-01
+## 41        0.0e+00
+## 42        2.0e-01
+## 43        3.0e-01
+## 44        0.0e+00
+## 45        0.0e+00
+## 46        4.0e-01
+## 47        0.0e+00
+## 48        4.9e-02
+## 49        0.0e+00
+## 50        0.0e+00</code></pre>
+<p><span class="math inline">\(M \leftarrow A \rightarrow D\)</span></p>
+</div>
+<div id="what-does-it-mean-to-stratify-by-a-continouse-variable" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> What does it mean to stratify by a continouse variable</h3>
+<p>How does <span class="math inline">\(A\)</span> influence <span class="math inline">\(D ?\)</span></p>
+<p>What is <span class="math inline">\(D=f(A, M) ?\)</span></p>
+<p>In a linear regression:</p>
+<p><span class="math display">\[
+\begin{aligned}
+D_{i} &amp; \sim \operatorname{Normal}\left(\mu_{i}, \sigma\right) \\
+\mu_{i} &amp;=\alpha+\beta_{M} M_{i}+\beta_{A} A_{i}
+\end{aligned}
+\]</span></p>
+<p>Every value of <span class="math inline">\(A\)</span> produces of different relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(M\)</span>.</p>
+<p>From the perspective of marriage rate, marriage is just something that makes the intercept conditional on age.</p>
+<p>OFten convenient to standardize variales in linear regression.</p>
+<p>Standardize (Z-score): substract mean and divide by standard deviation.</p>
+<p>Computation works better.</p>
+<p>Easy to choose sensible priors.</p>
+</div>
+<div id="section-1" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> </h3>
+<p><span class="math display">\[
+\begin{aligned}
+D_{i} &amp; \sim \operatorname{Normal}\left(\mu_{i}, \sigma\right) \\
+\mu_{i} &amp;=\alpha+\beta_{M} M_{i}+\beta_{A} A \\
+\alpha &amp; \sim \operatorname{Normal}(0,10) \\
+\beta_{M} &amp; \sim \operatorname{Normal}(0,10) \\
+\beta_{A} &amp; \sim \operatorname{Normal}(0,10) \\
+\sigma &amp; \sim \operatorname{Exponential}(1)
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="lecture-05.html#cb36-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb36-2"><a href="lecture-05.html#cb36-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb36-3"><a href="lecture-05.html#cb36-3" aria-hidden="true" tabindex="-1"></a>bM <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb36-4"><a href="lecture-05.html#cb36-4" aria-hidden="true" tabindex="-1"></a>bA <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb36-5"><a href="lecture-05.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), </span>
+<span id="cb36-6"><a href="lecture-05.html#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span><span class="st">&quot;Meian age of marriage (standardized)&quot;</span>,</span>
+<span id="cb36-7"><a href="lecture-05.html#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab=</span><span class="st">&quot;Divoce rate (stardardized)&quot;</span>)</span>
+<span id="cb36-8"><a href="lecture-05.html#cb36-8" aria-hidden="true" tabindex="-1"></a>Aseq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="sc">-</span><span class="dv">3</span>, <span class="at">to=</span><span class="dv">3</span>, <span class="at">len=</span><span class="dv">30</span>)</span>
+<span id="cb36-9"><a href="lecture-05.html#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb36-10"><a href="lecture-05.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> a[i] <span class="sc">+</span> bA[i]<span class="sc">*</span>Aseq</span>
+<span id="cb36-11"><a href="lecture-05.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(Aseq, mu, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb36-12"><a href="lecture-05.html#cb36-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="stat_rethinking_2022_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="lecture-05.html#cb37-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb37-2"><a href="lecture-05.html#cb37-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.02</span>)</span>
+<span id="cb37-3"><a href="lecture-05.html#cb37-3" aria-hidden="true" tabindex="-1"></a>bM <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>,<span class="fl">0.5</span>)</span>
+<span id="cb37-4"><a href="lecture-05.html#cb37-4" aria-hidden="true" tabindex="-1"></a>bA <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb37-5"><a href="lecture-05.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), </span>
+<span id="cb37-6"><a href="lecture-05.html#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span><span class="st">&quot;Meian age of marriage (standardized)&quot;</span>,</span>
+<span id="cb37-7"><a href="lecture-05.html#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab=</span><span class="st">&quot;Divoce rate (stardardized)&quot;</span>)</span>
+<span id="cb37-8"><a href="lecture-05.html#cb37-8" aria-hidden="true" tabindex="-1"></a>Aseq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="sc">-</span><span class="dv">3</span>, <span class="at">to=</span><span class="dv">3</span>, <span class="at">len=</span><span class="dv">30</span>)</span>
+<span id="cb37-9"><a href="lecture-05.html#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb37-10"><a href="lecture-05.html#cb37-10" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> a[i] <span class="sc">+</span> bA[i]<span class="sc">*</span>Aseq</span>
+<span id="cb37-11"><a href="lecture-05.html#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(Aseq, mu, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb37-12"><a href="lecture-05.html#cb37-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="stat_rethinking_2022_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div id="analyze-the-data" class="section level4" number="3.2.3.1">
+<h4><span class="header-section-number">3.2.3.1</span> Analyze the data</h4>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="lecture-05.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robustHD)</span></code></pre></div>
+<pre><code>## Loading required package: perry</code></pre>
+<pre><code>## Loading required package: robustbase</code></pre>
+<pre><code>## 
+## Attaching package: &#39;robustHD&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:rethinking&#39;:
+## 
+##     standardize</code></pre>
+</div>
+</div>
+</div>
+<div id="reference-1" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Reference</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lecture-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lecture-07.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

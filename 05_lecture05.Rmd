@@ -15,6 +15,7 @@ $X \leftarrow Z \rightarrow Y$
 
 
 ```{r}
+library(simcausal)
 n <- 1000
 ## confounding variable
 ## Fair coin flip
@@ -57,9 +58,11 @@ cor(X[Z==1], Y[Z==1])
 
 
 ```{r}
+library(simcausal)
+
 cols = c(4, 2)
 N = 300
-Z <- rbern(N)
+Z <- rbern(N, prob = 0.5)
 X <- rnorm(N, 2*Z-1)
 Y <- rnorm(N, 2*Z-1)
 
@@ -69,7 +72,6 @@ abline(lm(Y[Z==0]~X[Z==0]), col=2, lwd=3)
 abline(lm(Y~X), lwd=3)
 text(x = -2, y=2, labels = "Z = 0", col = 4)
 ```
-
 We have a continouse variable $X$ and $Y$. For all $X$ and $Y$, there is a positive correlation. 
 
 X and Y are not independent on one another. 
@@ -183,13 +185,14 @@ for(i in 1:n){
 
 ```{r}
 library(robustHD)
-dat <- list(
-   D = stardardize()
-  
-)
+
 ```
 
 
+
+
+
+## Reference
 
 
 

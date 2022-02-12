@@ -1,4 +1,7 @@
 .GlobalEnv
+package:robustHD
+package:robustbase
+package:perry
 package:rethinking
 package:parallel
 package:cmdstanr
@@ -6,6 +9,9 @@ package:rstan
 package:ggplot2
 package:StanHeaders
 package:simcausal
+org:r-lib
+org:r-lib
+org:r-lib
 org:r-lib
 org:r-lib
 tools:rstudio
