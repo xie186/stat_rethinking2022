@@ -2,7 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-
+.config/
+.local/
 
 ## /home/xie186/projects/stat_rethinking2022
 

@@ -1,8 +1,0 @@
-]0;/home/rstudiorstudio@6af24b29d7ba:~$ 
-]0;/home/rstudiorstudio@6af24b29d7ba:~$ 
-]0;/home/rstudiorstudio@6af24b29d7ba:~$ ls
-01_lecture01.Rmd  07_lecture07.Rmd  12_Lecture12.Rmd  bookdown-minimal.Rproj  index.Rmd
-02_lecture02.Rmd  09_lecture9.Rmd   _book	      _bookdown.yml	      LICENSE
-05_lecture05.Rmd  11_Lecture11.Rmd  _bookdown_files   docs		      README.md
-]0;/home/rstudiorstudio@6af24b29d7ba:~$ 
-]0;/home/rstudiorstudio@6af24b29d7ba:~$ git add .
